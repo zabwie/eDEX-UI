@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eDEX-UI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/xterm.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="system-info">
+        <div class="hostname"></div>
+        <div class="datetime"></div>
+        <div id="uptime"></div>
+      </div>
+      <div class="window-controls">
+        <button id="minimize-btn">-</button>
+        <button id="maximize-btn">□</button>
+        <button id="close-btn">×</button>
+      </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- System monitor -->
+        <div class="system-monitor">
+          <h3>System Monitor</h3>
+          
+          <div class="monitor-section">
+            <h4>CPU</h4>
+            <div class="progress-bar">
+              <div id="cpu-bar" class="progress" style="width: 0%"></div>
+            </div>
+            <div id="cpu-percentage" class="percentage">0%</div>
+            <div id="cpu-details" class="cpu-details"></div>
+          </div>
+          
+          <div class="monitor-section">
+            <h4>Memory</h4>
+            <div class="progress-bar">
+              <div id="memory-bar" class="progress" style="width: 0%"></div>
+            </div>
+            <div id="memory-percentage" class="percentage">0%</div>
+            <div id="memory-details" class="memory-details"></div>
+          </div>
+          
+          <div class="monitor-section">
+            <h4>Network</h4>
+            <div id="network-details" class="network-details">0 KB/s</div>
+          </div>
+        </div>
+        
+        <!-- File explorer -->
+        <div class="file-explorer">
+          <h3>File Explorer</h3>
+          <div id="file-tree" class="file-tree"></div>
+        </div>
+      </div>
+      
+      <!-- Terminal container -->
+      <div class="terminal-container">
+        <div class="tabs-container">
+          <div id="terminal-tabs" class="tabs">
+            <div class="tab active" data-tab-id="terminal-1">Terminal 1</div>
+          </div>
+          <button id="new-tab-btn">+</button>
+        </div>
+        <div id="terminals" class="terminals">
+          <div id="terminal-1" class="terminal active"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Status bar -->
+    <div class="status-bar">
+      <div class="status-item" id="current-user"></div>
+      <div class="status-item" id="current-path"></div>
+      <div class="status-item" id="terminal-count">Terminals: 1</div>
+      <div class="status-item">
+        <button id="debug-btn" style="background: none; border: none; color: inherit; cursor: pointer;">
+          Debug
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="../assets/js/xterm.min.js"></script>
+  <script src="../assets/js/xterm-addon-fit.min.js"></script>
+  <script src="../assets/js/xterm-addon-web-links.min.js"></script>
+  <script src="../assets/js/terminal.js"></script>
+  <script src="../assets/js/system-monitor.js"></script>
+  <script src="../assets/js/file-explorer.js"></script>
+  <script src="../assets/js/ui-controller.js"></script>
+</body>
+</html>

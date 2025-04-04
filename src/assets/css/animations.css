@@ -1,0 +1,141 @@
+/* Background Grid */
+.background-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.grid-dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(0, 168, 255, 0.2);
+  border-radius: 50%;
+  animation: pulse-dot 5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* Startup Animation */
+.startup .container {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.ready .container {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Terminal Cursor Animation */
+.xterm-cursor-layer {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Tab Transitions */
+.tab {
+  transition: background-color 0.3s ease;
+}
+
+/* Progress Bar Animation */
+.progress {
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+/* Glow Effects */
+.system-monitor, .file-explorer {
+  position: relative;
+  overflow: hidden;
+}
+
+.system-monitor::after, .file-explorer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 70%);
+  opacity: 0.1;
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Typing Animation for Terminal */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Notification Animation */
+@keyframes notification {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.notification {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-shadow: 0 0 10px var(--glow-color);
+  z-index: 1000;
+  animation: notification 3s forwards;
+}

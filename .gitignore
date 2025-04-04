@@ -1,0 +1,54 @@
+# Dependencies
+futuristic-terminal/node_modules/
+node_modules/
+# Specifically ignore large Electron binaries
+futuristic-terminal/node_modules/electron/dist/electron.exe
+futuristic-terminal/node_modules/electron/dist/*.exe
+futuristic-terminal/node_modules/electron/dist/*.dll
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+build/
+out/
+release/
+
+# Electron specific
+.electron-builder.env
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS specific files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Debug logs
+logs/
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary files
+.tmp/
+.temp/

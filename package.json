@@ -1,0 +1,19 @@
+{
+  "name": "edex-ui",
+  "version": "1.0.0",
+  "description": "A futuristic terminal emulator",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^35.1.4",
+    "systeminformation": "^5.12.6",
+    "xterm": "^5.1.0",
+    "xterm-addon-fit": "^0.7.0",
+    "xterm-addon-web-links": "^0.8.0"
+  }
+}
